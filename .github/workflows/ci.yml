@@ -21,14 +21,11 @@ jobs:
 
   test-docker:
     runs-on: ubuntu-latest
-    container:
-      image: jetpackio/devbox:latest
-      options: --user root
     steps:
       - uses: actions/checkout@v4
-
-      - name: Run arbitrary commands
-        run: devbox run -- echo "done!"
-
-      - name: Run a script called test
-        run: devbox run test
+      
+      - name: Run in Devbox Docker container
+        run: |
+          docker run --rm -v ${{ github.workspace }}:/workspace -w /workspace \
+            jetpackio/devbox:latest \
+            bash -c "devbox run -- echo 'done!' && devbox run test"
