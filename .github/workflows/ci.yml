@@ -10,6 +10,8 @@ jobs:
 
       - name: Install devbox
         uses: jetify-com/devbox-install-action@v0.12.0
+        with:
+          enable-cache: 'true'
 
       - name: Run arbitrary commands
         run: devbox run -- echo "done!"
