@@ -2,6 +2,7 @@
   "name": "devbox-test",
   "module": "index.ts",
   "type": "module",
+  "version": "1.0.0",
   "private": true,
   "devDependencies": {
     "@types/bun": "1.2.21"
