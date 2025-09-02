@@ -4,7 +4,7 @@
   "shell": {
     "init_hook": ["echo 'Welcome to devbox!' > /dev/null"],
     "scripts": {
-      "test": ["bun run index.ts"]
+      "test": ["tsx index.ts"]
     }
   }
 }
