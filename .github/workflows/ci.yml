@@ -18,3 +18,16 @@ jobs:
 
       - name: Run a script called test
         run: devbox run test
+
+  test-docker:
+    runs-on: ubuntu-latest
+    container:
+      image: jetpackio/devbox:latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run arbitrary commands
+        run: devbox run -- echo "done!"
+
+      - name: Run a script called test
+        run: devbox run test
