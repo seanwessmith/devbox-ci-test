@@ -23,6 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: jetpackio/devbox:latest
+      options: --user root
     steps:
       - uses: actions/checkout@v4
 
